@@ -1,0 +1,22 @@
+name = "cf_ai_minimal_app"
+main = "src/index.ts"
+compatibility_date = "2024-09-19"
+compatibility_flags = ["nodejs_compat"]
+
+[ai]
+binding = "AI"
+
+[[durable_objects.bindings]]
+name = "CHAT_ROOM"
+class_name = "ChatRoom"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["ChatRoom"]
+
+[vars]
+MODEL = "@cf/meta/llama-3.1-8b-instruct"
+APP_NAME = "Cloudflare AI Minimal Chat"
+
+[dev]
+port = 8787
